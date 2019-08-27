@@ -19,6 +19,7 @@ package com.o19s.es.ltr.ranker.ranklib;
 import com.o19s.es.ltr.ranker.LtrRanker;
 import com.o19s.es.ltr.ranker.parser.LtrRankerParserFactory;
 import org.elasticsearch.common.component.AbstractComponent;
+import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.script.ScriptContext;
 import org.elasticsearch.script.ScriptEngine;
 
@@ -44,8 +45,8 @@ public class RankLibScriptEngine extends AbstractComponent implements ScriptEngi
             new ScriptContext<>("ranklib", RankLibModelContainer.Factory.class);
     private final LtrRankerParserFactory factory;
 
-    public RankLibScriptEngine(LtrRankerParserFactory factory) {
-        super();
+    public RankLibScriptEngine(Settings settings,LtrRankerParserFactory factory) {
+        super(settings);
         this.factory = Objects.requireNonNull(factory);
     }
 

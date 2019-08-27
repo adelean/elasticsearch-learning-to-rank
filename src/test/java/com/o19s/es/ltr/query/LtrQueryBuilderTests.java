@@ -166,7 +166,6 @@ public class LtrQueryBuilderTests extends AbstractQueryTestCase<LtrQueryBuilder>
         return false;
     }
 
-    @Override
     protected boolean isCacheable(LtrQueryBuilder queryBuilder) {
         return false;
     }

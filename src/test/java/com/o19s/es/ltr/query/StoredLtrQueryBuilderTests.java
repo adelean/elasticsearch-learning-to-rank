@@ -217,7 +217,6 @@ public class StoredLtrQueryBuilderTests extends AbstractQueryTestCase<StoredLtrQ
         assertThat(rquery.ranker().newFeatureVector(null), instanceOf(DenseFeatureVector.class));
     }
 
-    @Override
     protected boolean isCacheable(StoredLtrQueryBuilder queryBuilder) {
         // This query is not cachable as it needs a ScriptService
         // see QueryShardContext#failIfFrozen()
